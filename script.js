@@ -37,3 +37,37 @@ console.log(isLoggin, typeof isLoggin);
 // Undefined
 let card;
 console.log(card, typeof card);
+
+
+/* ********************************* BASIC OPERATORS **********
++, -, =, <, ...
+ *********************************************************** */
+
+// Arithmetic Operators
+const jeremiAge = 2090 - 1990;
+console.log(jeremiAge);
+
+let x = 10, y = 2;
+console.log(x + y);
+console.log(x * y);
+console.log(x/y);
+console.log(x**y);
+
+// Comparaison Operators
+console.log (x > y);
+console.log ( x <= y);
+
+
+/* ********************************* STRINGS ****** **********
+ Regular string - Bactic string - Multilines string
+ *********************************************************** */
+
+ // single quote string
+ let singQuote = 'Just a single quotre string !'; 
+
+ // Double quote string
+ console.log("My name is: " + firstName+ " a "+ jeremiAge+ " year old");
+
+ // Teamplate literal
+const jeremi = `I'm ${firstName}, a ${jeremiAge} year old ${job} `;
+console.log(jeremi);

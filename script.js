@@ -1,7 +1,6 @@
 /* *************************** VARIABLES DÉCLARATION **********
 let - const - var
  *********************************************************** */
-
 // Declaration
 let myVariable;
       // Assigment
@@ -21,7 +20,6 @@ const birthday = 1980;
 /* ************************************** DATA TYPES **********
 Numer - String - Boolean - Undefined - Null - Symbol -BigInt
  *********************************************************** */
-
 // Number
 let age = 10 ;
 console.log(age, typeof age);
@@ -39,10 +37,10 @@ let card;
 console.log(card, typeof card);
 
 
+
 /* ********************************* BASIC OPERATORS **********
 +, -, =, <, ...
  *********************************************************** */
-
 // Arithmetic Operators
 const jeremiAge = 2090 - 1990;
 console.log(jeremiAge);
@@ -75,7 +73,6 @@ console.log(2 >= 2 || 2 < 6);
 /* ********************************* STRINGS ****** **********
  Regular string - Bactic string - Multilines string
  *********************************************************** */
-
  // single quote string
  let singQuote = 'Just a single quotre string !'; 
 
@@ -100,3 +97,14 @@ console.log(`seconde string
 with template string
 multiple line
 `);
+
+
+/* ********************************* FUNCTIONS ****** **********
+ Function decralation - Function expression
+ *********************************************************** */
+
+function logger(){
+      console.log('Just a logger function');
+}
+// calling function logger
+logger();

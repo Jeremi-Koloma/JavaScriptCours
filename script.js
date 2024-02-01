@@ -53,9 +53,23 @@ console.log(x * y);
 console.log(x/y);
 console.log(x**y);
 
+// Increment
+y++;
+
+// Decrement
+y--;
+
 // Comparaison Operators
 console.log (x > y);
 console.log ( x <= y);
+
+// Logical operators
+const hasDrivingLicence = true;
+const hasGoodVision = false;
+console.log(hasDrivingLicence && hasGoodVision);
+console.log(hasDrivingLicence && !hasGoodVision);
+console.log(10 > 5 && 20 < 30);
+console.log(2 >= 2 || 2 < 6);
 
 
 /* ********************************* STRINGS ****** **********
@@ -71,3 +85,18 @@ console.log ( x <= y);
  // Teamplate literal
 const jeremi = `I'm ${firstName}, a ${jeremiAge} year old ${job} `;
 console.log(jeremi);
+
+// scape caractor
+console.log('I\'m Jeremi');
+
+// multiple line with double quote
+console.log("sting with \n\
+multiples \n\
+lines \
+");
+
+// template string mutiple line
+console.log(`seconde string
+with template string
+multiple line
+`);

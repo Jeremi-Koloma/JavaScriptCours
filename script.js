@@ -1,3 +1,5 @@
+'use strict';
+
 /* *************************** VARIABLES DÉCLARATION **********
 let - const - var
  *********************************************************** */
@@ -100,11 +102,34 @@ multiple line
 
 
 /* ********************************* FUNCTIONS ****** **********
- Function decralation - Function expression
+ Function declaration - Function expression
  *********************************************************** */
 
+ // function declaration
 function logger(){
       console.log('Just a logger function');
 }
-// calling function logger
+// calling / running / invoking the function
 logger();
+
+// function declaration with parametters 
+function fruitPocessor(apples, oranges){
+      const juice = `Hello ! I want juice with ${apples} apples and ${oranges} oranges.`;
+      return juice;
+}
+const appleJuice = fruitPocessor(3, 9);
+console.log(appleJuice);
+
+
+// Function Expression
+const calculAge = function (birthYear){
+      return 2024 - birthYear;
+}
+const myAge = calculAge(1990);
+console.log(myAge);
+
+
+// Arrow function
+const calcAge2 = birthYear => 2027 - birthYear;
+const captCalcAge2 = calcAge2(1996);
+console.log(captCalcAge2)

@@ -5,14 +5,14 @@ let - const - var
  *********************************************************** */
 // Declaration
 let myVariable;
-      // Assigment
-      myVariable = "Hello !";
+// Assigment
+myVariable = "Hello !";
 
 
 // Declaration
 var job;
-      // Assigment
-      job = "Developper";
+// Assigment
+job = "Developper";
 
 // immutable variable
 const birthday = 1980;
@@ -23,7 +23,7 @@ const birthday = 1980;
 Numer - String - Boolean - Undefined - Null - Symbol -BigInt
  *********************************************************** */
 // Number
-let age = 10 ;
+let age = 10;
 console.log(age, typeof age);
 
 // String
@@ -50,8 +50,8 @@ console.log(jeremiAge);
 let x = 10, y = 2;
 console.log(x + y);
 console.log(x * y);
-console.log(x/y);
-console.log(x**y);
+console.log(x / y);
+console.log(x ** y);
 
 // Increment
 y++;
@@ -60,8 +60,8 @@ y++;
 y--;
 
 // Comparaison Operators
-console.log (x > y);
-console.log ( x <= y);
+console.log(x > y);
+console.log(x <= y);
 
 // Logical operators
 const hasDrivingLicence = true;
@@ -75,13 +75,13 @@ console.log(2 >= 2 || 2 < 6);
 /* ********************************* STRINGS ****** **********
  Regular string - Bactic string - Multilines string
  *********************************************************** */
- // single quote string
- let singQuote = 'Just a single quotre string !'; 
+// single quote string
+let singQuote = 'Just a single quotre string !';
 
- // Double quote string
- console.log("My name is: " + firstName+ " a "+ jeremiAge+ " year old");
+// Double quote string
+console.log("My name is: " + firstName + " a " + jeremiAge + " year old");
 
- // Teamplate literal
+// Teamplate literal
 const jeremi = `I'm ${firstName}, a ${jeremiAge} year old ${job} `;
 console.log(jeremi);
 
@@ -102,18 +102,18 @@ multiple line
 
 
 /* ********************************* FUNCTIONS ****** **********
- Function declaration - Function expression
+ Function declaration - Function expression - Arrow function
  *********************************************************** */
 
- // function declaration
-function logger(){
+// function declaration
+function logger() {
       console.log('Just a logger function');
 }
 // calling / running / invoking the function
 logger();
 
 // function declaration with parametters 
-function fruitPocessor(apples, oranges){
+function fruitPocessor(apples, oranges) {
       const juice = `Hello ! I want juice with ${apples} apples and ${oranges} oranges.`;
       return juice;
 }
@@ -122,7 +122,7 @@ console.log(appleJuice);
 
 
 // Function Expression
-const calculAge = function (birthYear){
+const calculAge = function (birthYear) {
       return 2024 - birthYear;
 }
 const myAge = calculAge(1990);
@@ -144,3 +144,19 @@ const captRetirementAge = untilRetirement(1991, 'Jeremi');
 const captRetirementAge2 = untilRetirement(1970, 'Moussa');
 console.log(captRetirementAge);
 console.log(captRetirementAge2);
+
+
+// first Function
+function cutFruitPieces(fruit) {
+      return fruit * 4;
+};
+
+function fruitPocessor(apples, oranges) {
+      // Calling function inside other function
+      const applePices = cutFruitPieces(apples);
+      const orangePices = cutFruitPieces(oranges);
+      const juice = `Hello ! I want juice with ${applePices} apple of pices ${orangePices} orange of pices.`;
+      return juice;
+}
+const captFruitProcessor = fruitPocessor(3, 9);
+console.log(captFruitProcessor);

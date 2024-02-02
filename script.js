@@ -132,4 +132,15 @@ console.log(myAge);
 // Arrow function
 const calcAge2 = birthYear => 2027 - birthYear;
 const captCalcAge2 = calcAge2(1996);
-console.log(captCalcAge2)
+console.log(captCalcAge2);
+
+// Arrow function with multiples parametters
+const untilRetirement = (birthYear, firstName) => {
+      const age = 2024 - birthYear;
+      const retirement = 65 - age;
+      return `${firstName} you'll be retiring in ${retirement} years`;
+}
+const captRetirementAge = untilRetirement(1991, 'Jeremi');
+const captRetirementAge2 = untilRetirement(1970, 'Moussa');
+console.log(captRetirementAge);
+console.log(captRetirementAge2);

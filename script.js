@@ -173,6 +173,9 @@ console.log(captFruitProcessor);
  console.log(friends.length);
  // Get the last element in the array
  console.log(friends[friends.length - 1]);
+ // Replace an element in Array
+ friends[1] = "Adama";
+ console.log(friends);
 
 
  const years = new Array(1990, 1991, 1992, 1993);

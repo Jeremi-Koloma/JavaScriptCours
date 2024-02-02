@@ -165,3 +165,15 @@ console.log(captFruitProcessor);
 /* ********************************* ARRAY ****** **********
  Function declaration - Function expression - Arrow function
  *********************************************************** */
+ const friends = ["Michée", "Job", "David"];
+ console.log(friends);
+ // Access the first element in Array
+ console.log(friends[0]);
+ // Get the numbers of array items
+ console.log(friends.length);
+ // Get the last element in the array
+ console.log(friends[friends.length - 1]);
+
+
+ const years = new Array(1990, 1991, 1992, 1993);
+ console.log(years);

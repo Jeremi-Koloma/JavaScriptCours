@@ -160,3 +160,8 @@ function fruitPocessor(apples, oranges) {
 }
 const captFruitProcessor = fruitPocessor(3, 9);
 console.log(captFruitProcessor);
+
+
+/* ********************************* ARRAY ****** **********
+ Function declaration - Function expression - Arrow function
+ *********************************************************** */

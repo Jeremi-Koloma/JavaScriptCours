@@ -145,7 +145,6 @@ const captRetirementAge2 = untilRetirement(1970, 'Moussa');
 console.log(captRetirementAge);
 console.log(captRetirementAge2);
 
-
 // first Function
 function cutFruitPieces(fruit) {
       return fruit * 4;
@@ -196,3 +195,16 @@ console.log(friends.indexOf('Adama'));
 // Check if an element exist in array
 console.log(friends.includes('Michée'));
 console.log(friends.includes('Aly'));
+
+
+/* ********************************* OBJECT ****** **********
+ *********************************************************** */
+const ballo = {
+      firstName: 'Ibrahim',
+      lastName: 'BALLO',
+      job: 'Programmer',
+      age: 2024 - 1997,
+      friend: ['Genika', 'Mariam', 'Kalifa']
+}
+
+console.log(ballo);

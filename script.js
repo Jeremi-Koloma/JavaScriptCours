@@ -163,20 +163,36 @@ console.log(captFruitProcessor);
 
 
 /* ********************************* ARRAY ****** **********
- Function declaration - Function expression - Arrow function
  *********************************************************** */
- const friends = ["Michée", "Job", "David"];
- console.log(friends);
- // Access the first element in Array
- console.log(friends[0]);
- // Get the numbers of array items
- console.log(friends.length);
- // Get the last element in the array
- console.log(friends[friends.length - 1]);
- // Replace an element in Array
- friends[1] = "Adama";
- console.log(friends);
+const friends = ["Michée", "Job", "David"];
+console.log(friends);
 
+const years = new Array(1990, 1991, 1992, 1993);
+console.log(years);
 
- const years = new Array(1990, 1991, 1992, 1993);
- console.log(years);
+// Access the first element in Array
+console.log(friends[0]);
+// Get the numbers of array items
+console.log(friends.length);
+// Get the last element in the array
+console.log(friends[friends.length - 1]);
+// Replace an element in Array
+friends[1] = "Adama";
+console.log(friends);
+// Add element in the end of the Array
+friends.push('Bob');
+console.log(friends);
+// Add element to the beganing of the Array
+friends.unshift("Hamidou");
+console.log(friends);
+// Remove the last element in an Array
+friends.pop();
+console.log(friends);
+// Remove the first element in an array
+friends.shift();
+console.log(friends);
+// Get the index of an element in an array
+console.log(friends.indexOf('Adama'));
+// Check if an element exist in array
+console.log(friends.includes('Michée'));
+console.log(friends.includes('Aly'));

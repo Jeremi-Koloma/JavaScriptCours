@@ -210,3 +210,7 @@ const ballo = {
 console.log(ballo);
 // Acces to an object property
 console.log(ballo.firstName);
+console.log(ballo['lastName']);
+//Difference between bracket vs Dot notation
+const interessted = prompt("What do you want to know about Ballo ? Job - age - friend");
+console.log(ballo[interessted]);

@@ -208,3 +208,5 @@ const ballo = {
 }
 
 console.log(ballo);
+// Acces to an object property
+console.log(ballo.firstName);

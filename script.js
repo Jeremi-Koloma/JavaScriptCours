@@ -212,5 +212,11 @@ console.log(ballo);
 console.log(ballo.firstName);
 console.log(ballo['lastName']);
 //Difference between bracket vs Dot notation
-const interessted = prompt("What do you want to know about Ballo ? Job - age - friend");
-console.log(ballo[interessted]);
+//const interessted = prompt("What do you want to know about Ballo ? Job - age - friend");
+//console.log(ballo[interessted]);
+// Add a new property in an object
+ballo.location = 'Bamako-coura';
+ballo['phone'] = '12345678';
+console.log(ballo);
+const balloString = `${ballo.firstName} has ${ballo.friend.length} friends, and his best friend is: ${ballo.friend[0]}`;
+console.log(balloString);

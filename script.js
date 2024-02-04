@@ -224,13 +224,13 @@ console.log(balloString);
 
 /* ********************************* FOR LOOP ****** **********
  *********************************************************** */
-for(let i = 1; i < 10; i++){
+for (let i = 1; i < 10; i++) {
       console.log(`JavaScrip is jan: ${i}`);
 }
 
 const jobfriends = ['Genika', 'Mariam', 'Kalifa', 'David', 'Gabi'];
 const alyFriends = [];
-for(let i = 0; i < jobfriends.length; i++){
+for (let i = 0; i < jobfriends.length; i++) {
       console.log(jobfriends[i]);
       // first way to fill an empty array
       alyFriends[i] = jobfriends[i];
@@ -241,6 +241,15 @@ for(let i = 0; i < jobfriends.length; i++){
 console.log(alyFriends);
 
 // Decrement
-for (let i = jobfriends.length - 1; i >= 0; i--){
+for (let i = jobfriends.length - 1; i >= 0; i--) {
       console.log(i, jobfriends[i]);
+}
+
+/* ********************************* WHILE LOOP ****** **********
+ *********************************************************** */
+let rep = 1;
+
+while (rep <= 5) {
+      console.log(`WHILE: running ${rep} time`);
+      rep++;
 }

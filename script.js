@@ -227,3 +227,15 @@ console.log(balloString);
 for(let i = 1; i < 10; i++){
       console.log(`JavaScrip is jan: ${i}`);
 }
+
+const jobfriends = ['Genika', 'Mariam', 'Kalifa'];
+const alyFriends = [];
+for(let i = 0; i < jobfriends.length; i++){
+      console.log(jobfriends[i]);
+      // first way to fill an empty array
+      alyFriends[i] = jobfriends[i];
+      // Second way 
+      alyFriends.push(jobfriends[i]);
+}
+
+console.log(alyFriends);

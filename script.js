@@ -228,7 +228,7 @@ for(let i = 1; i < 10; i++){
       console.log(`JavaScrip is jan: ${i}`);
 }
 
-const jobfriends = ['Genika', 'Mariam', 'Kalifa'];
+const jobfriends = ['Genika', 'Mariam', 'Kalifa', 'David', 'Gabi'];
 const alyFriends = [];
 for(let i = 0; i < jobfriends.length; i++){
       console.log(jobfriends[i]);
@@ -239,3 +239,8 @@ for(let i = 0; i < jobfriends.length; i++){
 }
 
 console.log(alyFriends);
+
+// Decrement
+for (let i = jobfriends.length - 1; i >= 0; i--){
+      console.log(i, jobfriends[i]);
+}

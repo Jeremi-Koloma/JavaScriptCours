@@ -220,3 +220,10 @@ ballo['phone'] = '12345678';
 console.log(ballo);
 const balloString = `${ballo.firstName} has ${ballo.friend.length} friends, and his best friend is: ${ballo.friend[0]}`;
 console.log(balloString);
+
+
+/* ********************************* FOR LOOP ****** **********
+ *********************************************************** */
+for(let i = 1; i < 10; i++){
+      console.log(`JavaScrip is jan: ${i}`);
+}

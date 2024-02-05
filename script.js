@@ -160,6 +160,28 @@ function fruitPocessor(apples, oranges) {
 const captFruitProcessor = fruitPocessor(3, 9);
 console.log(captFruitProcessor);
 
+// OTHER EXAMPLES
+
+// Function declaration
+function workingDayProcessor(hours, days) {
+      return `Jeremi work ${hours} hours, ${days} days a week.`;
+}
+const workingDay = workingDayProcessor(8, 5);
+console.log(workingDay);
+
+
+// Function Expression
+const readingProcessor = function (hours, times) {
+      return `Jeremi read for ${hours} hours, ${times} times a week`;
+}
+const reading = readingProcessor(2, 4);
+console.log(reading);
+
+
+// Arrow function
+const expenses = expenses => 20000 - expenses;
+const expense = expenses(5000);
+console.log(expense);
 
 /* ********************************* ARRAY ****** **********
  *********************************************************** */

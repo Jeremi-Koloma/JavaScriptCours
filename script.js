@@ -275,3 +275,26 @@ while (rep <= 5) {
       console.log(`WHILE: running ${rep} time`);
       rep++;
 }
+
+
+/* ********************************* DESTRUCTURING ****** **********
+ *********************************************************** */
+
+const restaurant = {
+      name: 'Glamour+',
+      location: 'Bacodjicoroni, street 201,',
+      categories: ['Italian', 'Pizza', 'Vegetariam'],
+      starterMenu: ['Salad', 'Juice', 'Fruite'],
+      mainMenu: ['Rice', 'Humburger'],
+      order: function (starterIndex, mainIndex){
+            return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+      }
+};
+
+
+let [main, second] = restaurant.categories;
+console.log(main, second);
+
+const DestructArray = [10, 20, 30, 40];
+const [a, b, c, d]  = DestructArray;
+console.log(a, b, c, d);

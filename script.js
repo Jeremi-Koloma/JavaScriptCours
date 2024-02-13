@@ -285,7 +285,7 @@ const restaurant = {
       location: 'Bacodjicoroni, street 201,',
       categories: ['Italian', 'Pizza', 'Vegetariam'],
       starterMenu: ['Salad', 'Juice', 'Fruite'],
-      mainMenu: ['Rice', 'Humburger'],
+      mainMenu: ['Rice', 'Humburger' ,'Fuit'],
       order: function (starterIndex, mainIndex){
             return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
       }
@@ -295,6 +295,15 @@ const restaurant = {
 let [main, second] = restaurant.categories;
 console.log(main, second);
 
+const [starter, mainCours] = restaurant.order(0, 2);
+console.log(starter, mainCours);
+
 const DestructArray = [10, 20, 30, 40];
 const [a, b, c, d]  = DestructArray;
 console.log(a, b, c, d);
+
+const myArr = [2, 8, [1, 4]];
+let [o, ,e] = myArr;
+console.log(o, e);
+let [p, , [, r]] = myArr;
+console.log(p, r);

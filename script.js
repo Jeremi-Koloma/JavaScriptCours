@@ -315,3 +315,7 @@ console.log(p, r);
 // Destructurning with the same properties name
 const {name, categories} = restaurant;
 console.log(name, categories);
+
+// Destructuring with custom properties name
+const {name: restaurantName, categories: restaurantCategories } = restaurant;
+console.log(restaurantName, restaurantCategories);

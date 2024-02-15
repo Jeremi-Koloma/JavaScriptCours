@@ -277,7 +277,7 @@ while (rep <= 5) {
 }
 
 
-/* ********************************* DESTRUCTURING ****** **********
+/* ********************************* DESTRUCTURING ARRAY ****** **********
  *********************************************************** */
 
 const restaurant = {
@@ -307,3 +307,11 @@ let [o, ,e] = myArr;
 console.log(o, e);
 let [p, , [, r]] = myArr;
 console.log(p, r);
+
+
+/* ********************************* DESTRUCTURING OBJECT ****** **********
+ *********************************************************** */
+
+// Destructurning with the same properties name
+const {name, categories} = restaurant;
+console.log(name, categories);

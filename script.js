@@ -285,8 +285,8 @@ const restaurant = {
       location: 'Bacodjicoroni, street 201,',
       categories: ['Italian', 'Pizza', 'Vegetariam'],
       starterMenu: ['Salad', 'Juice', 'Fruite'],
-      mainMenu: ['Rice', 'Humburger' ,'Fuit'],
-      order: function (starterIndex, mainIndex){
+      mainMenu: ['Rice', 'Humburger', 'Fuit'],
+      order: function (starterIndex, mainIndex) {
             return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
       }
 };
@@ -299,11 +299,11 @@ const [starter, mainCours] = restaurant.order(0, 2);
 console.log(starter, mainCours);
 
 const DestructArray = [10, 20, 30, 40];
-const [a, b, c, d]  = DestructArray;
+const [a, b, c, d] = DestructArray;
 console.log(a, b, c, d);
 
 const myArr = [2, 8, [1, 4]];
-let [o, ,e] = myArr;
+let [o, , e] = myArr;
 console.log(o, e);
 let [p, , [, r]] = myArr;
 console.log(p, r);
@@ -313,9 +313,13 @@ console.log(p, r);
  *********************************************************** */
 
 // Destructurning with the same properties name
-const {name, categories} = restaurant;
+const { name, categories } = restaurant;
 console.log(name, categories);
 
 // Destructuring with custom properties name
-const {name: restaurantName, categories: restaurantCategories } = restaurant;
+const { name: restaurantName, categories: restaurantCategories } = restaurant;
 console.log(restaurantName, restaurantCategories);
+
+// Set default varaiable to our properties
+const { menu = ['menu1'], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);

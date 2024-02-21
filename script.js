@@ -355,8 +355,14 @@ console.log(restaurant.name, restaurantCopy.name);
 console.log(3 || 'Holla');
 console.log('' || 'Mali');
 console.log('' || 0 || undefined || true);
+console.log(undefined || null);
 
 const RestaurantContat = restaurant.contact || '1234567';
 const RestaurantConta2 = restaurant.contact ? restaurant.contact : '90229112';
 console.log(RestaurantContat);
 console.log(RestaurantConta2);
+
+// short circuiting &&
+console.log(6 && 'bola');
+console.log(0 && 'bola');
+console.log(true && 'bola' && 1 && 3 && 0 && true);

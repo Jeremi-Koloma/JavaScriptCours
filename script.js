@@ -348,7 +348,7 @@ console.log(restaurant.name, restaurantCopy.name);
 
 
 /* ********************************* SHORT CIRCUITING ****** **********
-      || - &&
+      || - && - Nullish
  *********************************************************** */
 
 // short circuiting with or
@@ -366,3 +366,8 @@ console.log(RestaurantConta2);
 console.log(6 && 'bola');
 console.log(0 && 'bola');
 console.log(true && 'bola' && 1 && 3 && 0 && true);
+
+// Nullish : Null or undefined (Not 0)
+restaurant.street = 0;
+const restStree = restaurant.street ?? '202';
+console.log(restStree);

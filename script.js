@@ -289,7 +289,7 @@ const restaurant = {
       order: function (starterIndex, mainIndex) {
             return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
       },
-      orderCoffe: function(ing1, ing2, ing3) {
+      orderCoffe: function (ing1, ing2, ing3) {
             return `I want a coffe with ${ing1}, ${ing2} and ${ing3}`;
       }
 };
@@ -342,7 +342,7 @@ const myCoffe = restaurant.orderCoffe(...ingredients);
 console.log(myCoffe);
 
 // copy an object
-const restaurantCopy = {...restaurant};
+const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Chicha Housse';
 console.log(restaurant.name, restaurantCopy.name);
 
@@ -371,3 +371,14 @@ console.log(true && 'bola' && 1 && 3 && 0 && true);
 restaurant.street = 0;
 const restStree = restaurant.street ?? '202';
 console.log(restStree);
+
+
+/* ********************************* LOOPING ARRAY ****** **********
+ *********************************************************** */
+
+const restoMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(restoMenu);
+
+for (const item of restoMenu) console.log(item);
+
+for (const [item, elem] of restoMenu.entries()) console.log(`${item}: ${elem}`);     

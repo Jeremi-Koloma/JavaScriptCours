@@ -381,4 +381,36 @@ console.log(restoMenu);
 
 for (const item of restoMenu) console.log(item);
 
-for (const [item, elem] of restoMenu.entries()) console.log(`${item}: ${elem}`);     
+for (const [item, elem] of restoMenu.entries()) console.log(`${item}: ${elem}`);
+
+const openingHours = {
+      Mon: {
+            open: '09:00',
+            close: '00:00'
+      },
+      Thu: {
+            open: '10:00',
+            close: '00:00'
+      },
+      Fri: {
+            open: '12:00',
+            close: '00:00'
+      },
+      Sun: {
+            open: '14:00',
+            close: '00:00'
+      }
+};
+
+console.log(openingHours);
+
+const openingHoursKey = Object.keys(openingHours);
+console.log(openingHoursKey);
+
+const openingHoursValues = Object.values(openingHours);
+console.log(openingHoursValues);
+
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [day, { open, close }] of entries) console.log(`On ${day}, we are open at ${open} and close at ${close}`);

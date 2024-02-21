@@ -288,6 +288,9 @@ const restaurant = {
       mainMenu: ['Rice', 'Humburger', 'Fuit'],
       order: function (starterIndex, mainIndex) {
             return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+      },
+      orderCoffe: function(ing1, ing2, ing3) {
+            return `I want a coffe with ${ing1}, ${ing2} and ${ing3}`;
       }
 };
 
@@ -320,6 +323,25 @@ console.log(name, categories);
 const { name: restaurantName, categories: restaurantCategories } = restaurant;
 console.log(restaurantName, restaurantCategories);
 
-// Set default varaiable to our properties
+// Set default values to our properties
 const { menu = ['menu1'], starterMenu: starters = [] } = restaurant;
 console.log(menu, starters);
+
+
+/* ********************************* SPREAD OPÉRATOR ****** **********
+ *********************************************************** */
+
+const arrY = [1, 2, 3, 4, 5];
+const newArray = ['Alou', 'Bedy', ...arrY];
+console.log(newArray);
+
+
+// calling function parameters by spread operator
+const ingredients = ['Sugar', 'Lipton', 'Citron'];
+const myCoffe = restaurant.orderCoffe(...ingredients);
+console.log(myCoffe);
+
+// copy an object
+const restaurantCopy = {...restaurant};
+restaurantCopy.name = 'Chicha Housse';
+console.log(restaurant.name, restaurantCopy.name);

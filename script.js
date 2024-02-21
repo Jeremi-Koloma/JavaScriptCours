@@ -345,3 +345,18 @@ console.log(myCoffe);
 const restaurantCopy = {...restaurant};
 restaurantCopy.name = 'Chicha Housse';
 console.log(restaurant.name, restaurantCopy.name);
+
+
+/* ********************************* SHORT CIRCUITING ****** **********
+      || - &&
+ *********************************************************** */
+
+// short circuiting with or
+console.log(3 || 'Holla');
+console.log('' || 'Mali');
+console.log('' || 0 || undefined || true);
+
+const RestaurantContat = restaurant.contact || '1234567';
+const RestaurantConta2 = restaurant.contact ? restaurant.contact : '90229112';
+console.log(RestaurantContat);
+console.log(RestaurantConta2);

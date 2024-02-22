@@ -475,3 +475,19 @@ console.log(restMap);
 restMap.clear();
 console.log(restMap);
 
+const question = new Map([
+      ['question', 'What is the best programming language in the world ?'],
+      [1, 'C'],
+      [3, 'Java'],
+      [4, 'Python'],
+      [true, 'Correct answer'],
+      [false, 'Wrong']
+]);
+
+console.log(question);
+
+console.log(question.get('question'));
+for(const [key, value] of question) {
+      if(typeof key === 'number') console.log(`Answers ${key}: ${value}`);
+}
+

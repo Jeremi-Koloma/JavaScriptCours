@@ -491,3 +491,7 @@ for(const [key, value] of question) {
       if(typeof key === 'number') console.log(`Answers ${key}: ${value}`);
 }
 
+// convert Map to Array
+const mapToArray = [...question];
+console.log(mapToArray);
+

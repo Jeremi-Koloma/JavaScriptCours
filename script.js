@@ -458,6 +458,7 @@ const restMap = new Map();
 restMap.set('name', 'Chiken Bluse')
       .set('location', 'Hamdallaye ACI')
       .set('manager', 'Mimy')
+      .set('coffe', [1, 3, 4])
       .set('menu', ['Macaroni', 'Spaghetti', 'Salade', 'Haricot']);
 
 console.log(restMap);
@@ -465,3 +466,12 @@ console.log(restMap);
 // Get element in Map
 console.log(restMap.get('name'));
 console.log(restMap.get('menu'));
+// check if an element existe in Map
+console.log(restMap.has('location'));
+// Remouve an element in Map
+restMap.delete('coffe');
+console.log(restMap);
+// Remouve all Elements in Map
+restMap.clear();
+console.log(restMap);
+

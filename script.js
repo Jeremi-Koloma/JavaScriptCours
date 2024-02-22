@@ -475,6 +475,7 @@ console.log(restMap);
 restMap.clear();
 console.log(restMap);
 
+// Other way to declare a Map
 const question = new Map([
       ['question', 'What is the best programming language in the world ?'],
       [1, 'C'],
@@ -494,4 +495,6 @@ for(const [key, value] of question) {
 // convert Map to Array
 const mapToArray = [...question];
 console.log(mapToArray);
+
+for ( const [arrKey, arrValue] of mapToArray) console.log(arrKey, arrValue);
 

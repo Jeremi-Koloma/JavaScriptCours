@@ -448,3 +448,15 @@ console.log(teamUnique);
 // Get a Set array
 const teamUniqueArray = [...new Set(team)];
 console.log(teamUniqueArray);
+
+
+/* ********************************* MAP ****** **********
+ *********************************************************** */
+
+const restMap = new Map();
+// Add elements in Map
+restMap.set('name', 'Chiken Bluse')
+      .set('location', 'Hamdallaye ACI')
+      .set('manager', 'Mimy');
+
+console.log(restMap);

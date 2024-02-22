@@ -414,3 +414,37 @@ const entries = Object.entries(openingHours);
 console.log(entries);
 
 for (const [day, { open, close }] of entries) console.log(`On ${day}, we are open at ${open} and close at ${close}`);
+
+
+/* ********************************* SET ****** **********
+ *********************************************************** */
+
+// Set / No dupliced value
+const orderSet = new Set(['Pizza', 'Pomme', 'Annanas', 'Couscouss', 'Pizza', 'Pomme', 'Annanas', 'Couscouss']);
+console.log(orderSet);
+const setJeremi = new Set('Jeremi');
+console.log(setJeremi);
+
+console.log(orderSet.size);
+// Add element in a set
+orderSet.add('Tomate');
+orderSet.add('Tomate');
+console.log(orderSet);
+// check if an element exist in set
+console.log(orderSet.has('Pomme'));
+// Remouve an element in set
+orderSet.delete('Couscouss');
+console.log(orderSet);
+// Delete all element in set
+setJeremi.clear();
+console.log(setJeremi);
+for (const i of orderSet) console.log(i);
+
+const team = ['Manager', 'Programmer', 'Director', 'RH', 'Developper', 'Manager', 'Programmer', 'Secretaire', 'Manager'];
+console.log(team);
+// convert array to set
+const teamUnique = new Set(team);
+console.log(teamUnique);
+// Get a Set array
+const teamUniqueArray = [...new Set(team)];
+console.log(teamUniqueArray);

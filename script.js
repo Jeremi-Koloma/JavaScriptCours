@@ -457,6 +457,11 @@ const restMap = new Map();
 // Add elements in Map
 restMap.set('name', 'Chiken Bluse')
       .set('location', 'Hamdallaye ACI')
-      .set('manager', 'Mimy');
+      .set('manager', 'Mimy')
+      .set('menu', ['Macaroni', 'Spaghetti', 'Salade', 'Haricot']);
 
 console.log(restMap);
+
+// Get element in Map
+console.log(restMap.get('name'));
+console.log(restMap.get('menu'));

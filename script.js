@@ -512,9 +512,12 @@ console.log(airline.length);
 console.log(airline.indexOf('k'));
 console.log(airline.lastIndexOf('k'));
 console.log(airline.slice(4));
+console.log(airline.toLocaleLowerCase());
+console.log(airline.toUpperCase());
 
 const email = "  example@gmail.com";
 console.log(email);
 // Delete the white space
 const timEmail = email.trim();
 console.log(timEmail);
+console.log(timEmail.includes('@'));

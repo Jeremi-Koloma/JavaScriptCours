@@ -512,3 +512,9 @@ console.log(airline.length);
 console.log(airline.indexOf('k'));
 console.log(airline.lastIndexOf('k'));
 console.log(airline.slice(4));
+
+const email = "  example@gmail.com";
+console.log(email);
+// Delete the white space
+const timEmail = email.trim();
+console.log(timEmail);

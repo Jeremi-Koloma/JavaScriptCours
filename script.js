@@ -498,3 +498,17 @@ console.log(mapToArray);
 
 for ( const [arrKey, arrValue] of mapToArray) console.log(arrKey, arrValue);
 
+
+/* ********************************* STRING ****** **********
+ *********************************************************** */
+
+const airline = 'Sky Mali to kaye';
+const plane = 'B3EZ12';
+
+console.log(plane[0]);
+console.log(plane[2]);
+console.log(plane[3]);
+console.log(airline.length);
+console.log(airline.indexOf('k'));
+console.log(airline.lastIndexOf('k'));
+console.log(airline.slice(4));

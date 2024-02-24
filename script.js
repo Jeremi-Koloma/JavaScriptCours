@@ -537,3 +537,24 @@ const mastCreditCard = function (number) {
 
 console.log(mastCreditCard(77908432));
 console.log(mastCreditCard(937908432033));
+
+
+/* ********************************* DEFAULT PARAMETERS FUNCTION ****** **********
+ *********************************************************** */
+
+const books = [];
+
+const booking = function (author = 'Jeremi', title ='I am a title', yaer = 1990) {
+      const aBook = {
+            author,
+            title,
+            yaer
+      }
+      console.log(aBook);
+      console.log(books.push(aBook));
+}
+
+booking('Robert');
+booking();
+booking('Aly', 'Aly book title');
+booking('Moussa', 'Moise book title', 2020);

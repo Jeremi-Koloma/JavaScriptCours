@@ -552,9 +552,22 @@ const booking = function (author = 'Jeremi', title ='I am a title', yaer = 1990)
       }
       console.log(aBook);
       console.log(books.push(aBook));
-}
+};
 
 booking('Robert');
 booking();
 booking('Aly', 'Aly book title');
 booking('Moussa', 'Moise book title', 2020);
+
+const upperFirstWord = function (str) {
+      const [fistWord, ...others] = str.split(' ');
+      return [fistWord.toUpperCase(), ...others].join(' ');
+};
+
+// Higer other function
+const transformer = function (strn, fnct){
+      console.log(`Original string :${strn}`);
+      console.log(`Transformed string :${fnct(strn)}`);
+};
+
+transformer('JavaScript is the best language', upperFirstWord);

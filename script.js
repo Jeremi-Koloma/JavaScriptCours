@@ -488,15 +488,15 @@ const question = new Map([
 console.log(question);
 
 console.log(question.get('question'));
-for(const [key, value] of question) {
-      if(typeof key === 'number') console.log(`Answers ${key}: ${value}`);
+for (const [key, value] of question) {
+      if (typeof key === 'number') console.log(`Answers ${key}: ${value}`);
 }
 
 // convert Map to Array
 const mapToArray = [...question];
 console.log(mapToArray);
 
-for ( const [arrKey, arrValue] of mapToArray) console.log(arrKey, arrValue);
+for (const [arrKey, arrValue] of mapToArray) console.log(arrKey, arrValue);
 
 
 /* ********************************* STRING ****** **********
@@ -509,8 +509,11 @@ console.log(plane[0]);
 console.log(plane[2]);
 console.log(plane[3]);
 console.log(airline.length);
+// Get the position of fist ('K)
 console.log(airline.indexOf('k'));
+// Get the position of last ('K')
 console.log(airline.lastIndexOf('k'));
+// The string start at position (4)
 console.log(airline.slice(4));
 console.log(airline.toLocaleLowerCase());
 console.log(airline.toUpperCase());
@@ -518,6 +521,19 @@ console.log(airline.toUpperCase());
 const email = "  example@gmail.com";
 console.log(email);
 // Delete the white space
-const timEmail = email.trim();
+const timEmail = email.trim().trimEnd();
 console.log(timEmail);
 console.log(timEmail.includes('@'));
+console.log(plane.padStart(10, '+'));
+console.log(plane.padEnd(15, '+'));
+console.log(plane.padStart(25, '+').padEnd(25, '+'));
+
+const mastCreditCard = function (number) {
+      const str = number + '';
+      // Get the last 4 caracters
+      const lastCardNumber = str.slice(-4);
+      return lastCardNumber.padStart(str.length, '*');
+}
+
+console.log(mastCreditCard(77908432));
+console.log(mastCreditCard(937908432033));

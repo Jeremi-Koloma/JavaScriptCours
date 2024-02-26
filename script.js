@@ -571,3 +571,15 @@ const transformer = function (strn, fnct){
 };
 
 transformer('JavaScript is the best language', upperFirstWord);
+
+
+/* ********************************* IMEDIATELY INVOKE FUNCTION EXPRESSION ****** **********
+ *********************************************************** */
+
+// Funtion expression (IIFE)
+(function() {
+      console.log('This function will never run again !');
+})();
+
+// Arrow Function Run Once (IIFE)
+(() => console.log('Again this Arrow function will never run agin'))();

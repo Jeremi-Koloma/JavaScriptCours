@@ -583,3 +583,23 @@ transformer('JavaScript is the best language', upperFirstWord);
 
 // Arrow Function Run Once (IIFE)
 (() => console.log('Again this Arrow function will never run agin'))();
+
+
+/* ********************************* ARRAYS METHODES ****** **********
+      SLICE - SPLICE - REVERSE
+ *********************************************************** */
+
+// SLICE
+const tableArr = ['A', 'B', 'C', 'd', 'e', 'f', 'g'];
+console.log(tableArr);
+// Start at the position "2" without changes the original array
+console.log(tableArr.slice(2));
+// Get the "2" last elements in the array
+console.log(tableArr.slice(-2));
+// Get the last element int array
+console.log(tableArr.slice(-1));
+
+// SPLICE
+// start at the position "2" but deletes the "0", "1" element in the original Array
+console.log(tableArr.splice(2));
+console.log(tableArr);

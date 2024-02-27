@@ -589,7 +589,8 @@ transformer('JavaScript is the best language', upperFirstWord);
       SLICE - SPLICE - REVERSE
  *********************************************************** */
 
-// SLICE
+// SLICE / IMMUTABLE
+console.log('---- SLICE ------');
 const tableArr = ['A', 'B', 'C', 'd', 'e', 'f', 'g'];
 console.log(tableArr);
 // Start at the position "2" without changes the original array
@@ -599,7 +600,16 @@ console.log(tableArr.slice(-2));
 // Get the last element int array
 console.log(tableArr.slice(-1));
 
-// SPLICE
+// SPLICE / MUTABLE
+console.log('---- SPLICE ------');
 // start at the position "2" but deletes the "0", "1" element in the original Array
 console.log(tableArr.splice(2));
 console.log(tableArr);
+
+// REVERSE / MUTABLE
+console.log('---- REVERSE ------');
+const tableArr2 = [1,2,3,4,5,6,7,8,9];
+console.log(tableArr2);
+// revese the array but it makes changes from the origin array
+console.log(tableArr2.reverse()); 
+console.log(tableArr2); 

@@ -585,8 +585,9 @@ transformer('JavaScript is the best language', upperFirstWord);
 (() => console.log('Again this Arrow function will never run agin'))();
 
 
+
 /* ********************************* ARRAYS METHODES ****** **********
-      SLICE - SPLICE - REVERSE
+      SLICE - SPLICE - REVERSE - CONCAT - JOIN
  *********************************************************** */
 
 // SLICE / IMMUTABLE
@@ -612,4 +613,10 @@ const tableArr2 = [1,2,3,4,5,6,7,8,9];
 console.log(tableArr2);
 // revese the array but it makes changes from the origin array
 console.log(tableArr2.reverse()); 
-console.log(tableArr2); 
+console.log(tableArr2);
+
+// CONCAT / IMMUTABLE
+console.log('---- CONCAT ------');
+console.log(tableArr.concat(tableArr2));
+// Other way
+console.log([...tableArr, ...tableArr2]);

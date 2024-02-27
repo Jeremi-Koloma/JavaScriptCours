@@ -653,3 +653,16 @@ console.log('------- Current index and Element forEach --------');
 tableArr2.forEach(function(elem, index){
       console.log(`Item:${index+1} have the element :${elem}`);
 });
+
+const loopMap = new Map([
+      ['US', 'United State'],
+      ['FR', 'Français'],
+      ['ML', 'Mali'],
+      ['BF', 'Burkina Fasso']
+]);
+console.log(loopMap);
+
+// forEach in Map
+loopMap.forEach(function (key, value){
+      console.log(`Key: ${key} Value: ${value}`);
+});

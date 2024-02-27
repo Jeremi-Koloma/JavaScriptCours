@@ -637,3 +637,13 @@ tableArr2.forEach(function (i) {
 tableArr.forEach(function (item) {
       console.log(item);
 });
+
+// Get the current element with ForLoop
+for ( const elem of tableArr2){
+      console.log(elem);
+}
+
+// Get the current index and the element it-self in ForLoop
+for(const [item, elem] of tableArr2.entries()) {
+      console.log(`Item:${item+1} have the element :${elem}`);
+}

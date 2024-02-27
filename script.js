@@ -618,5 +618,10 @@ console.log(tableArr2);
 // CONCAT / IMMUTABLE
 console.log('---- CONCAT ------');
 console.log(tableArr.concat(tableArr2));
-// Other way
+// Other way spread operator
 console.log([...tableArr, ...tableArr2]);
+
+// JOIN / MUTABLE
+console.log('---- JOIN ------');
+console.log(tableArr.join('-'));
+console.log(tableArr2.join('+'));

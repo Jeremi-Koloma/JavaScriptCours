@@ -544,7 +544,7 @@ console.log(mastCreditCard(937908432033));
 
 const books = [];
 
-const booking = function (author = 'Jeremi', title ='I am a title', yaer = 1990) {
+const booking = function (author = 'Jeremi', title = 'I am a title', yaer = 1990) {
       const aBook = {
             author,
             title,
@@ -565,7 +565,7 @@ const upperFirstWord = function (str) {
 };
 
 // Higer other function
-const transformer = function (strn, fnct){
+const transformer = function (strn, fnct) {
       console.log(`Original string :${strn}`);
       console.log(`Transformed string :${fnct(strn)}`);
 };
@@ -577,7 +577,7 @@ transformer('JavaScript is the best language', upperFirstWord);
  *********************************************************** */
 
 // Funtion expression (IIFE)
-(function() {
+(function () {
       console.log('This function will never run again !');
 })();
 
@@ -609,10 +609,10 @@ console.log(tableArr);
 
 // REVERSE / MUTABLE
 console.log('---- REVERSE ------');
-const tableArr2 = [1,2,3,4,5,6,7,8,9];
+const tableArr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 console.log(tableArr2);
 // revese the array but it makes changes from the origin array
-console.log(tableArr2.reverse()); 
+console.log(tableArr2.reverse());
 console.log(tableArr2);
 
 // CONCAT / IMMUTABLE
@@ -625,3 +625,15 @@ console.log([...tableArr, ...tableArr2]);
 console.log('---- JOIN ------');
 console.log(tableArr.join('-'));
 console.log(tableArr2.join('+'));
+
+
+/* ********************************* FOREACH ****** **********
+ *********************************************************** */
+// forEach
+tableArr2.forEach(function (i) {
+      i > 5 ? console.log(`i:${i} is greater then 5`) : console.log(`i:${i} is less then 5`);
+});
+
+tableArr.forEach(function (item) {
+      console.log(item);
+});

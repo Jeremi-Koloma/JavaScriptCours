@@ -642,8 +642,14 @@ tableArr.forEach(function (item) {
 for ( const elem of tableArr2){
       console.log(elem);
 }
-
 // Get the current index and the element it-self in ForLoop
+console.log('------- Current index and Element forLoop --------');
 for(const [item, elem] of tableArr2.entries()) {
       console.log(`Item:${item+1} have the element :${elem}`);
 }
+
+// Get the current index in forEach
+console.log('------- Current index and Element forEach --------');
+tableArr2.forEach(function(elem, index){
+      console.log(`Item:${index+1} have the element :${elem}`);
+});

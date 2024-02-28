@@ -654,6 +654,8 @@ tableArr2.forEach(function(elem, index){
       console.log(`Item:${index+1} have the element :${elem}`);
 });
 
+
+// forEach in Map
 const loopMap = new Map([
       ['US', 'United State'],
       ['FR', 'Français'],
@@ -662,7 +664,15 @@ const loopMap = new Map([
 ]);
 console.log(loopMap);
 
-// forEach in Map
-loopMap.forEach(function (key, value){
+loopMap.forEach(function (key, value, map){
       console.log(`Key: ${key} Value: ${value}`);
+});
+
+
+// forEach in Set
+const setLoop = new Set(['Us', 'Ml', 'Fr', 'Al', 'Us', 'Ml', 'Co']);
+console.log(setLoop);
+
+setLoop.forEach(function (value){
+      console.log(value);
 });

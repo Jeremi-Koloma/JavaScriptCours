@@ -91,6 +91,16 @@ const displayMovements = function (movmts) {
 }
 displayMovements(account1.movements);
 
+// DISPLAY THE USER'S BALANCE
+const displayBalanceMovement = function (movmnts) {
+  const balance = movmnts.reduce(function (acc, currMov) {
+    return acc + currMov;
+  }, 0);
+  // Display the balance in the UI
+  labelBalance.textContent = `${balance} CFA`;
+};
+displayBalanceMovement(account1.movements);
+
 
 
 
@@ -109,7 +119,7 @@ const movementsUSD = movements.map(function (mov) {
   const fcfaToDollar = 0.0017;
   return mov * fcfaToDollar;
 });
-console.log(movementsUSD);
+//console.log(movementsUSD);
 
 
 /////////////////////////////////////////////////
@@ -119,7 +129,7 @@ console.log(movementsUSD);
 const deposit = movements.filter(function (mov) {
   return mov > 0;
 });
-console.log(deposit);
+//console.log(deposit);
 
 // Withdrawal Array
 const withdrawal = movements.filter(mov => mov < 0);
@@ -129,9 +139,8 @@ console.log(withdrawal);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // REDUCE FIRST ARRAY IMMUTABLE - GET A NEW RESULT ARRAY
-
 const balance = movements.reduce(function (accum, mov, i, arr) {
   return accum + mov;
-});
+}, 0);
 
-console.log(balance);
+//console.log(balance);

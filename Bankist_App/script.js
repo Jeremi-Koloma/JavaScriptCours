@@ -82,7 +82,7 @@ const displayMovements = function (movmts) {
     const htmlMovementRow = `
     <div class="movements__row">
       <div class="movements__type movements__type--${typeMovement}">${index + 1} ${typeMovement}</div>
-      <div class="movements__value">${mov}</div>
+      <div class="movements__value">${mov} CFA</div>
    </div>
     `;
     // Displaying movements in the html file
@@ -100,6 +100,21 @@ const displayBalanceMovement = function (movmnts) {
   labelBalance.textContent = `${balance} CFA`;
 };
 displayBalanceMovement(account1.movements);
+
+// DISPLAY SUMMARY
+const displaySummary = function (movement) {
+  const cfaToDollar = 0.0017;
+  const incomes = movement.filter(function (mov) {
+    return mov > 0
+  }).map(function (mov) {
+    return mov * cfaToDollar;
+  }).reduce(function (acc, mov) {
+    return acc + mov;
+  }, 0);
+  // Display the InSummary in the UI
+  labelSumIn.textContent = `${incomes} $`;
+};
+displaySummary(account1.movements);
 
 
 

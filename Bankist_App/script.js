@@ -104,19 +104,19 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
-// MAP IMMUTABLE - GET A NEW RESULT ARRAY 
- const movementsUSD = movements.map(function(mov){
+// MAP FIRST ARRAY IMMUTABLE - GET A NEW RESULT ARRAY 
+const movementsUSD = movements.map(function (mov) {
   const fcfaToDollar = 0.0017;
   return mov * fcfaToDollar;
- });
- console.log(movementsUSD);
+});
+console.log(movementsUSD);
 
 
- /////////////////////////////////////////////////
 /////////////////////////////////////////////////
-// FILTER IMMUTABLE - GET A NEW RESULT ARRAY 
+/////////////////////////////////////////////////
+// FILTER FIRST ARRAY IMMUTABLE - GET A NEW RESULT ARRAY 
 // Desposit Array
-const deposit = movements.filter(function(mov){
+const deposit = movements.filter(function (mov) {
   return mov > 0;
 });
 console.log(deposit);
@@ -124,3 +124,14 @@ console.log(deposit);
 // Withdrawal Array
 const withdrawal = movements.filter(mov => mov < 0);
 console.log(withdrawal);
+
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// REDUCE FIRST ARRAY IMMUTABLE - GET A NEW RESULT ARRAY
+
+const balance = movements.reduce(function (accum, mov, i, arr) {
+  return accum + mov;
+});
+
+console.log(balance);

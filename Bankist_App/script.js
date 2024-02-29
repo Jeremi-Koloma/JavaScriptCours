@@ -104,6 +104,7 @@ displayBalanceMovement(account1.movements);
 // DISPLAY SUMMARY
 const displaySummary = function (movement) {
   const cfaToDollar = 0.0017;
+  // Summary IN
   const incomes = movement.filter(function (mov) {
     return mov > 0
   }).map(function (mov) {
@@ -111,8 +112,19 @@ const displaySummary = function (movement) {
   }).reduce(function (acc, mov) {
     return acc + mov;
   }, 0);
+
+  // Summary OUT
+  const outSum = movement.filter(function(mov){
+    return mov < 0;
+  }).map(function (mov){
+    return mov * cfaToDollar;
+  }).reduce(function (acc, mov){
+    return acc + mov;
+  }, 0);
+  console.log(outSum);
   // Display the InSummary in the UI
   labelSumIn.textContent = `${incomes} $`;
+  labelSumOut.textContent = `${outSum} $`;
 };
 displaySummary(account1.movements);
 

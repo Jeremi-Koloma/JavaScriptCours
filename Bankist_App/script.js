@@ -121,14 +121,14 @@ const displaySummary = function (movement) {
   }).reduce(function (acc, mov) {
     return acc + mov;
   }, 0);
-  
+
   // INTEREST
   const interestBank = 1.2;
-  const interrestMov = movement.filter(function(mov){
+  const interrestMov = movement.filter(function (mov) {
     return mov > 0;
-  }).map(function(depost){
+  }).map(function (depost) {
     return (depost * interestBank) / 2;
-  }).reduce(function (acc, currDepos){
+  }).reduce(function (acc, currDepos) {
     return acc + currDepos;
   }, 0);
 
@@ -139,6 +139,27 @@ const displaySummary = function (movement) {
 };
 displaySummary(account1.movements);
 
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// LOGIN PART
+
+// EVENT HANDLER
+let currentAccount;
+btnLogin.addEventListener('click', function (e) {
+  // Prevent the form (KEEPING the FORM)
+  e.preventDefault();
+
+  // FINDING THE USER INFOS
+  currentAccount = accounts.find(function (currUser) {
+    return currUser.username === inputLoginUsername.value;
+  });
+ 
+  // Check if password match
+  if (currentAccount?.pin == inputLoginPin.value) {
+
+  }
+
+}, false);
 
 
 
@@ -171,7 +192,7 @@ const deposit = movements.filter(function (mov) {
 
 // Withdrawal Array
 const withdrawal = movements.filter(mov => mov < 0);
-console.log(withdrawal);
+//console.log(withdrawal);
 
 
 /////////////////////////////////////////////////

@@ -156,7 +156,10 @@ btnLogin.addEventListener('click', function (e) {
  
   // Check if password match
   if (currentAccount?.pin == inputLoginPin.value) {
-
+    // Welcome message
+    labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`;
+    // Display the UI
+    containerApp.style.opacity = 100;
   }
 
 }, false);

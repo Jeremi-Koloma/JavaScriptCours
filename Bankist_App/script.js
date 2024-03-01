@@ -89,7 +89,6 @@ const displayMovements = function (movmts) {
     containerMovements.insertAdjacentHTML('afterbegin', htmlMovementRow);
   });
 }
-displayMovements(account1.movements);
 
 // DISPLAY THE USER'S BALANCE
 const displayBalanceMovement = function (movmnts) {
@@ -99,7 +98,6 @@ const displayBalanceMovement = function (movmnts) {
   // Display the balance in the UI
   labelBalance.textContent = `${balance} CFA`;
 };
-displayBalanceMovement(account1.movements);
 
 // DISPLAY SUMMARY
 const displaySummary = function (movement) {
@@ -137,7 +135,6 @@ const displaySummary = function (movement) {
   labelSumOut.textContent = `${Math.abs(outSum)} $`;
   labelSumInterest.textContent = `${interrestMov}`;
 };
-displaySummary(account1.movements);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -160,6 +157,12 @@ btnLogin.addEventListener('click', function (e) {
     labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`;
     // Display the UI
     containerApp.style.opacity = 100;
+    // Display the user's movements
+    displayMovements(currentAccount.movements);
+    // Display the user's Balance
+    displayBalanceMovement(currentAccount.movements);
+    // Display the Summary
+    displaySummary(currentAccount.movements);
   }
 
 }, false);

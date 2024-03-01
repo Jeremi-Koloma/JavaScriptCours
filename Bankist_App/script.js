@@ -114,17 +114,28 @@ const displaySummary = function (movement) {
   }, 0);
 
   // Summary OUT
-  const outSum = movement.filter(function(mov){
+  const outSum = movement.filter(function (mov) {
     return mov < 0;
-  }).map(function (mov){
+  }).map(function (mov) {
     return mov * cfaToDollar;
-  }).reduce(function (acc, mov){
+  }).reduce(function (acc, mov) {
     return acc + mov;
   }, 0);
-  console.log(outSum);
+  
+  // INTEREST
+  const interestBank = 1.2;
+  const interrestMov = movement.filter(function(mov){
+    return mov > 0;
+  }).map(function(depost){
+    return (depost * interestBank) / 2;
+  }).reduce(function (acc, currDepos){
+    return acc + currDepos;
+  }, 0);
+
   // Display the InSummary in the UI
   labelSumIn.textContent = `${incomes} $`;
-  labelSumOut.textContent = `${outSum} $`;
+  labelSumOut.textContent = `${Math.abs(outSum)} $`;
+  labelSumInterest.textContent = `${interrestMov}`;
 };
 displaySummary(account1.movements);
 

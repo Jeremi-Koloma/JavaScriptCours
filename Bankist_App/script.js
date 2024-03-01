@@ -150,13 +150,17 @@ btnLogin.addEventListener('click', function (e) {
   currentAccount = accounts.find(function (currUser) {
     return currUser.username === inputLoginUsername.value;
   });
- 
+
   // Check if password match
   if (currentAccount?.pin == inputLoginPin.value) {
     // Welcome message
     labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`;
     // Display the UI
     containerApp.style.opacity = 100;
+    // Clear the input Fields
+    inputLoginUsername.value = '';
+    inputLoginPin.value = '';
+    inputLoginPin.blur();
     // Display the user's movements
     displayMovements(currentAccount.movements);
     // Display the user's Balance

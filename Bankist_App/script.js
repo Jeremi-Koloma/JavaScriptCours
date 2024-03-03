@@ -9,32 +9,40 @@
 // Data
 const account1 = {
   owner: 'Jeremi KOLOMA',
+  accountNumber: 121212,
   username: 'jeems',
   movements: [15000000, 450000, -400000, 30000, -6500, -1300, 700000, 1300000],
+  balance: 0,
   interestRate: 1.2, // %
   pin: 1111,
 };
 
 const account2 = {
   owner: 'David TOGO',
+  accountNumber: 232323,
   username: 'daav',
   movements: [50000, 34000, -15000, -7900, -3210, -1000, 850000, -3000],
+  balance: 0,
   interestRate: 1.5,
   pin: 2222,
 };
 
 const account3 = {
   owner: 'Hawa COULIBALY',
+  accountNumber: 343434,
   username: 'eva',
   movements: [200000, -1000, 340000, -3000, -2000, 500000, 40000, -4060],
+  balance: 0,
   interestRate: 0.7,
   pin: 3333,
 };
 
 const account4 = {
   owner: 'Mathieu SAGARA',
+  accountNumber: 454545,
   username: 'mato',
   movements: [4300500, 105000, 7009000, 50000, 9000],
+  balance: 0,
   interestRate: 1,
   pin: 4444,
 };
@@ -91,12 +99,12 @@ const displayMovements = function (movmts) {
 }
 
 // DISPLAY THE USER'S BALANCE
-const displayBalanceMovement = function (movmnts) {
-  const balance = movmnts.reduce(function (acc, currMov) {
+const displayBalanceMovement = function (account) {
+  account.balance = account.movements.reduce(function (acc, currMov) {
     return acc + currMov;
   }, 0);
   // Display the balance in the UI
-  labelBalance.textContent = `${balance} CFA`;
+  labelBalance.textContent = `${account.balance} CFA`;
 };
 
 // DISPLAY SUMMARY
@@ -164,9 +172,28 @@ btnLogin.addEventListener('click', function (e) {
     // Display the user's movements
     displayMovements(currentAccount.movements);
     // Display the user's Balance
-    displayBalanceMovement(currentAccount.movements);
+    displayBalanceMovement(currentAccount);
     // Display the Summary
     displaySummary(currentAccount.movements);
+  }
+
+}, false);
+
+// TRANSFERT MONEY
+btnTransfer.addEventListener('click', function (e) {
+  // Prevent the Form
+  e.preventDefault();
+  const amountTransf = Number(inputTransferAmount.value);
+  const receiveAccount = accounts.find(function (accurAcount) {
+    return accurAcount.accountNumber == Number(inputTransferTo.value)
+  });
+
+  // TRANSFERT VALIDATION
+  if (amountTransf > 0
+    && currentAccount.balance >= amountTransf
+    && receiveAccount
+    && receiveAccount?.accountNumber !== currentAccount.accountNumber) {
+    console.log('TRANSFER VALID');
   }
 
 }, false);

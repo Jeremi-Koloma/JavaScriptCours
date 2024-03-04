@@ -1,9 +1,13 @@
 'use strict';
 
-// Get email
-const firstName = document.querySelector('.firstName').value;
+// VARIABLES
+const btnLogin = document.querySelector('.login');
+const firstName = document.querySelector('.firstName');
 
 // Get the login btn
-document.querySelector('.login').addEventListener('click', function (){
-    console.log(firstName);
+btnLogin.addEventListener('click', function (e) {
+    // PREVENT FORM
+    e.preventDefault();
+    
+
 }, false);

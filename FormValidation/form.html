@@ -5,44 +5,46 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Baro App|Jeremi</title>
+	<title>Form|Validation</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 </head>
 
 <body>
 	<div class="wrapper">
-		<section class="form signup">
-			<header>Form Validation</header>
-			<form action="#">
-				<div class="error-txt">Message d'erreur !</div>
+		<section class="form">
+			<header>Inscription</header>
+			<form>
 				<div class="name-details">
-					
+
 					<div class="field input">
 						<label>Prénom</label>
-						<input type="text" placeholder="Prénom" id="firstName">
+						<input type="text" placeholder="Prénom" class="firstName">
 					</div>
-					
+
 					<div class="field input">
-						<label>Nom de Famille</label>
+						<label>Nom de famille</label>
 						<input type="text" placeholder="Nom de Famille">
 					</div>
 				</div>
-				
+
 				<div class="field input">
-					<label>Address Email</label>
+					<label>Addresse email</label>
 					<input type="email" placeholder="Votre Email" class="email">
 				</div>
-			
+
 				<div class="field input">
-					<label>Password</label>
-					<input type="password" placeholder="Nouveau mots de passe*">
-					<i class="fas fa-eye"></i>
+					<label>Mot de passe</label>
+					<input type="password" placeholder="Mot de passe*">
 				</div>
-				
-				<!-- ----------------------------BOUTTON CONTINER AVEC LA DISCUSSION--------------------------------------------->
+
+				<div class="field input">
+					<label>Confirmé le mot de passe</label>
+					<input type="password" placeholder="Mot de passe*">
+				</div>
+
 				<div class="field button">
-					<input type="submit" value="Login" class="login">
+					<input type="submit" value="S'inscrire" class="login">
 				</div>
 			</form>
 			<!-- ----------------------------LIENS UTILS--------------------------------------------->

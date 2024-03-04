@@ -144,6 +144,15 @@ const displaySummary = function (movement) {
   labelSumInterest.textContent = `${interrestMov}`;
 };
 
+const updateUi = function (account) {
+  // Display the user's movements
+  displayMovements(account.movements);
+  // Display the user's Balance
+  displayBalanceMovement(account);
+  // Display the Summary
+  displaySummary(account.movements);
+}
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LOGIN PART
@@ -169,12 +178,8 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = '';
     inputLoginPin.value = '';
     inputLoginPin.blur();
-    // Display the user's movements
-    displayMovements(currentAccount.movements);
-    // Display the user's Balance
-    displayBalanceMovement(currentAccount);
-    // Display the Summary
-    displaySummary(currentAccount.movements);
+    // UPDATE THE UI
+    updateUi(currentAccount);
   }
 
 }, false);
@@ -193,7 +198,14 @@ btnTransfer.addEventListener('click', function (e) {
     && currentAccount.balance >= amountTransf
     && receiveAccount
     && receiveAccount?.accountNumber !== currentAccount.accountNumber) {
-    console.log('TRANSFER VALID');
+    // DOING THE TRANSFERT
+    currentAccount.movements.push(-amountTransf);
+    receiveAccount.movements.push(amountTransf);
+    // CLEAN THE INPUT
+    inputTransferAmount.value = '';
+    inputTransferTo.value = '';
+    // UPDATE THE UI
+    updateUi(currentAccount);
   }
 
 }, false);

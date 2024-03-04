@@ -210,6 +210,23 @@ btnTransfer.addEventListener('click', function (e) {
 
 }, false);
 
+// CLOSE ACCOUNT
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+  // CHECK IF THE USERNAME AND PIN IS CORECT
+  if (inputCloseUsername.value == currentAccount.username
+    && Number(inputClosePin.value) === currentAccount.pin) {
+
+    const index = accounts.findIndex(function (account) {
+      return account.username === currentAccount.username;
+    });
+    // DELETE THE USER 
+    accounts.splice(index);
+    // HIDE THE UI
+    containerApp.style.opacity = 0;
+  }
+});
+
 
 
 const currencies = new Map([

@@ -54,6 +54,7 @@ body {
 
 .form form label {
     margin-bottom: 2px;
+    font-size: .9rem;
 }
 
 .form form .name-details {
@@ -117,4 +118,16 @@ form .name-details .field:last-child {
 .form .link a:hover {
     text-decoration: underline;
     color: blue;
+}
+
+/* *** ERROR MESSAGE ***** * */
+.errorFistName,
+.errorLastName,
+.errorEmail,
+.errorPassword,
+.errorPasswordConfirm {
+    font-size: .7rem;
+    color: red;
+    padding-left: 4px;
+    display: none;
 }

@@ -8,12 +8,40 @@ const inputEmail = document.querySelector('.email');
 const inputPassword = document.querySelector('.password');
 const inputPasswordConfirm = document.querySelector('.passwordConfirm');
 
-const labelErrorFirstName = document.querySelector('.errorFistName');
-const labelErrorLastName = document.querySelector('.errorLastName');
-const labelErrorEmail = document.querySelector('.errorEmail');
-const labelErrorPassword = document.querySelector('.errorPassword');
-const labelErrorPasswordConfirm = document.querySelector('.errorPasswordConfirm');
+const labelErrorFirstName = function (message) {
+    document.querySelector('.errorFistName').textContent = message;
+}
+const labelErrorFirstNameStyleDisplay = function (style) {
+    document.querySelector('.errorFistName').style.display = style;
+}
 
+const labelErrorLastName = function (message) {
+    document.querySelector('.errorLastName').textContent = message;
+}
+const labelErrorLastNameStyleDisplay = function (style) {
+    document.querySelector('.errorLastName').style.display = style;
+}
+const labelErrorPassword = function (message) {
+    document.querySelector('.errorPassword').textContent = message;
+}
+const labelErrorPasswordStyleDisplay = function (style) {
+    document.querySelector('.errorPassword').style.display = style;
+}
+const labelErrorEmail = function (message) {
+    document.querySelector('.errorEmail').textContent = message;
+}
+const labelErrorEmailStyleDisplay = function (style) {
+    document.querySelector('.errorEmail').style.display = style;
+}
+const labelErrorPasswordConfirm = function (message) {
+    document.querySelector('.errorPasswordConfirm').textContent = message;
+}
+const labelErrorPasswordConfirmStyleDisplay = function (style) {
+    document.querySelector('.errorPasswordConfirm').style.display = style;
+}
+const successMessageStyleDisplay = function (style) {
+    document.querySelector('.successMessage').style.display = style;
+}
 
 // Get the login btn
 btnLogin.addEventListener('click', function (e) {
@@ -24,89 +52,135 @@ btnLogin.addEventListener('click', function (e) {
     const email = inputEmail.value;
     const password = inputPassword.value;
     const passwordConfirm = inputPasswordConfirm.value;
+    const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    const inputFirstNameBorder = function (border) {
+        inputFirstName.style.border = border;
+    }
+    const inputLastNameBorder = function (border) {
+        inputLastName.style.border = border;
+    }
+    const inputPasswordBorder = function (border) {
+        inputPassword.style.border = border;
+    }
+    const inputEmailBorder = function (border) {
+        inputEmail.style.border = border;
+    }
+    const inputPasswordConfirmBorder = function (border) {
+        inputPasswordConfirm.style.border = border;
+    }
+
+    const ValidateEmail = function (email) {
+        if (email.match(validRegex)) {
+            inputEmailBorder('1px solid #37BA74');
+            labelErrorEmailStyleDisplay('none');
+            return true;
+        } else {
+            inputEmailBorder('1px solid red');
+            labelErrorEmail(`Adresse email invalide !`);
+            labelErrorEmailStyleDisplay('block');
+            return false;
+        }
+    }
+
 
     if (firstName === '') {
-        inputFirstName.style.border = '1px solid red';
-        labelErrorFirstName.textContent = `Champs obligatoire !`;
-        labelErrorFirstName.style.display = 'block';
+        inputFirstNameBorder('1px solid red');
+        labelErrorFirstName(`Champs obligatoire !`);
+        labelErrorFirstNameStyleDisplay('block');
     }
 
     if (lastName === '') {
-        inputLastName.style.border = '1px solid red';
-        labelErrorLastName.textContent = `Champs obligatoire !`;
-        labelErrorLastName.style.display = 'block';
+        inputLastNameBorder('1px solid red');
+        labelErrorLastName(`Champs obligatoire !`);
+        labelErrorLastNameStyleDisplay('block');
     }
 
     if (email === '') {
-        inputEmail.style.border = '1px solid red';
-        labelErrorEmail.textContent = `Champs obligatoire !`;
-        labelErrorEmail.style.display = 'block';
+        inputEmailBorder('1px solid red');
+        labelErrorEmail(`Champs obligatoire !`);
+        labelErrorEmailStyleDisplay('block');
     }
 
     if (password === '') {
-        inputPassword.style.border = '1px solid red';
-        labelErrorPassword.textContent = `Champs obligatoire !`;
-        labelErrorPassword.style.display = 'block';
+        inputPasswordBorder('1px solid red');
+        labelErrorPassword(`Champs obligatoire !`);
+        labelErrorPasswordStyleDisplay('block');
     }
 
     if (passwordConfirm === '') {
-        inputPasswordConfirm.style.border = '1px solid red';
-        labelErrorPasswordConfirm.textContent = `Champs obligatoire !`;
-        labelErrorPasswordConfirm.style.display = 'block';
+        inputPasswordConfirmBorder('1px solid red');
+        labelErrorPasswordConfirm(`Champs obligatoire !`);
+        labelErrorPasswordConfirmStyleDisplay('block');
     }
 
     if (firstName !== '') {
         if (firstName.length < 4) {
-            inputFirstName.style.border = '1px solid red';
-            labelErrorFirstName.textContent = `Prénom, 04 caractères au minimum !`;
-            labelErrorFirstName.style.display = 'block';
+            inputFirstNameBorder('1px solid red');
+            labelErrorFirstName(`Prénom, 04 caractères au minimum !`);
+            labelErrorFirstNameStyleDisplay('block');
         } else {
-            inputFirstName.style.border = 'none';
-            labelErrorFirstName.style.display = 'none';
+            inputFirstNameBorder('1px solid #37BA74');
+            labelErrorFirstNameStyleDisplay('none');
         }
     }
 
     if (lastName !== '') {
-        inputLastName.style.border = 'none';
-        labelErrorLastName.style.display = 'none';
+        inputLastNameBorder('1px solid #37BA74');
+        labelErrorLastNameStyleDisplay('none');
     }
 
     if (email !== '') {
-        inputEmail.style.border = 'none';
-        labelErrorEmail.style.display = 'none';
+        ValidateEmail(email);
     }
 
     if (password !== '') {
         if (password.length < 8) {
-            inputPassword.style.border = '1px solid red';
-            labelErrorPassword.textContent = `Mot de passe, 08 caractère au minimum !`;
-            labelErrorPassword.style.display = 'block';
+            inputPasswordBorder('1px solid red');
+            labelErrorPassword(`Mot de passe, 08 caractère au minimum !`);
+            labelErrorPasswordStyleDisplay('block');
         } else {
-            inputPassword.style.border = 'none';
-            labelErrorPassword.style.display = 'none';
+            inputPasswordBorder('1px solid #37BA74');
+            labelErrorPasswordStyleDisplay('none');
         }
     }
 
     if (passwordConfirm !== '') {
         if (password !== passwordConfirm) {
-            inputPasswordConfirm.style.border = '1px solid red';
-            labelErrorPasswordConfirm.textContent = `Mots de passe non conforme !`;
+            inputPasswordConfirmBorder('1px solid red');
+            labelErrorPasswordConfirm(`Mots de passe non conforme !`);
         } else {
-            inputPasswordConfirm.style.border = 'none';
-            labelErrorPasswordConfirm.style.display = 'none';
+            inputPasswordConfirmBorder('1px solid #37BA74');
+            labelErrorPasswordConfirmStyleDisplay('none');
         }
     }
 
 
     // VALIDATION
     if (firstName !== '' && lastName !== '' && email !== '' && password !== '' && passwordConfirm !== '') {
-        if (firstName.length >= 4 && password.length >= 8 && password === passwordConfirm) {
+        if (firstName.length >= 4 && email.match(validRegex) && password.length >= 8 && password === passwordConfirm) {
             console.log("----- Form Valid ---");
             console.log(firstName);
             console.log(lastName);
             console.log(email);
             console.log(password);
             console.log(passwordConfirm);
+            successMessageStyleDisplay('block');
+            // CLEAN THE INPUT FIELDS
+            inputFirstName.value = '';
+            inputFirstNameBorder('none');
+            inputLastName.value = '';
+            inputLastNameBorder('none');
+            inputEmail.value = '';
+            inputEmailBorder('none');
+            inputPassword.value = '';
+            inputPasswordBorder('none');
+            inputPasswordConfirm.value = '';
+            inputPasswordConfirmBorder('none');
+            // HIDE THE SUCCES MESSAGE
+            setTimeout(() => {
+                successMessageStyleDisplay('none');
+            }, "4000");
         }
     }
 

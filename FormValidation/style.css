@@ -84,8 +84,9 @@ form .name-details .field:last-child {
     box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.01),
         inset -2px -5px 10px rgba(255, 255, 255, 1),
         15px 15px 10px rgba(0, 0, 0, 0.05),
-        15px 10px 15px rgba(0, 0, 0, 0.25);
+        15px 10px 15px rgba(0, 0, 0, 0.03);
 }
+
 
 .form .button input {
     background: blue;
@@ -127,7 +128,19 @@ form .name-details .field:last-child {
 .errorPassword,
 .errorPasswordConfirm {
     font-size: .7rem;
-    color: red;
     padding-left: 4px;
+    color: red;
+    display: none;
+}
+
+.successMessage {
+    background: #37BA74;
+    padding: 5px 0;
+    text-align: center;
+    color: #fff;
+    font-size: .8rem;
+    border-radius: 3px;
+    margin-bottom: 13px;
+    text-transform: uppercase;
     display: none;
 }

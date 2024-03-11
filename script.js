@@ -676,3 +676,13 @@ console.log(setLoop);
 setLoop.forEach(function (value){
       console.log(value);
 });
+
+
+/* ********************************* FLAT ****** **********
+ *********************************************************** */
+const arrFlat = [[1,2,3], [0,8,2], 9,3];
+console.log(arrFlat);
+console.log(arrFlat.flat());
+const arrFlatDeep = [[[1,2],3], [0,[8,2]], [9,3]];
+console.log(arrFlatDeep);
+console.log(arrFlatDeep.flat(2));

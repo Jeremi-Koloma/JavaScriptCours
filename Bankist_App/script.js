@@ -269,3 +269,11 @@ const balance = movements.reduce(function (accum, mov, i, arr) {
 }, 0);
 
 //console.log(balance);
+
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// FLAT
+const arrMouvement = accounts.map((currMov, i, arr) => currMov.movements);
+const flatMov = arrMouvement.flat().reduce((accum, currValue, i, arr) => accum + currValue, 0);
+console.log(flatMov);

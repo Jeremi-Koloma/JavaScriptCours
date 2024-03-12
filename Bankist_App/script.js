@@ -79,13 +79,12 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
-const displayMovements = function (movmts) {
+const displayMovements = function (movmts, sort = false) {
   // set all the context of containerMovements to empty
   containerMovements.innerHTML = '';
-  // for(const [i, mov] of movmts.entries()){
-  //   console.log(`${i+1}: ${mov}`)
-  // }
-  movmts.forEach(function (mov, index) {
+  // Sorting
+  const movs = sort ? movmts.slice().sort((a, b) => a - b) : movmts;
+  movs.forEach(function (mov, index) {
     const typeMovement = mov > 0 ? 'deposit' : 'withdrawal';
     const htmlMovementRow = `
     <div class="movements__row">
@@ -225,6 +224,14 @@ btnClose.addEventListener('click', function (e) {
     // HIDE THE UI
     containerApp.style.opacity = 0;
   }
+});
+
+// SORT BTN
+let sorted = false;
+btnSort.addEventListener('click', function(e){
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });
 
 

@@ -688,7 +688,7 @@ console.log(arrFlatDeep);
 console.log(arrFlatDeep.flat(2));
 
 // REVISION
-const desposit = [1000, 30500, 5000, 400, 25000, 700, 100, 75, 10, 25, 500];
+const desposit = [1000, 30500, 5000, 400, 25000, 700, 100, 75, 10, 5, 25, 500];
 console.log(desposit);
 // reduce
 const balanceDeposit = desposit.reduce((accumulator, currDeposit) => accumulator + currDeposit, 0);
@@ -702,3 +702,7 @@ console.log(depositToEuro);
 // filter
 const bestDesposit = desposit.filter((depos) => depos > 500);
 console.log(bestDesposit);
+
+//find
+const getLowerDepsosit = desposit.find(depos => depos < 25);
+console.log(getLowerDepsosit);

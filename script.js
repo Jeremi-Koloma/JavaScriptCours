@@ -639,19 +639,19 @@ tableArr.forEach(function (item) {
 });
 
 // Get the current element with ForLoop
-for ( const elem of tableArr2){
+for (const elem of tableArr2) {
       console.log(elem);
 }
 // Get the current index and the element it-self in ForLoop
 console.log('------- Current index and Element forLoop --------');
-for(const [item, elem] of tableArr2.entries()) {
-      console.log(`Item:${item+1} have the element :${elem}`);
+for (const [item, elem] of tableArr2.entries()) {
+      console.log(`Item:${item + 1} have the element :${elem}`);
 }
 
 // Get the current index in forEach
 console.log('------- Current index and Element forEach --------');
-tableArr2.forEach(function(elem, index){
-      console.log(`Item:${index+1} have the element :${elem}`);
+tableArr2.forEach(function (elem, index) {
+      console.log(`Item:${index + 1} have the element :${elem}`);
 });
 
 
@@ -664,7 +664,7 @@ const loopMap = new Map([
 ]);
 console.log(loopMap);
 
-loopMap.forEach(function (key, value, map){
+loopMap.forEach(function (key, value, map) {
       console.log(`Key: ${key} Value: ${value}`);
 });
 
@@ -673,17 +673,17 @@ loopMap.forEach(function (key, value, map){
 const setLoop = new Set(['Us', 'Ml', 'Fr', 'Al', 'Us', 'Ml', 'Co']);
 console.log(setLoop);
 
-setLoop.forEach(function (value){
+setLoop.forEach(function (value) {
       console.log(value);
 });
 
 
 /* ********************************* FLAT ****** **********
  *********************************************************** */
-const arrFlat = [[1,2,3], [0,8,2], 9,3];
+const arrFlat = [[1, 2, 3], [0, 8, 2], 9, 3];
 console.log(arrFlat);
 console.log(arrFlat.flat());
-const arrFlatDeep = [[[1,2],3], [0,[8,2]], [9,3]];
+const arrFlatDeep = [[[1, 2], 3], [0, [8, 2]], [9, 3]];
 console.log(arrFlatDeep);
 console.log(arrFlatDeep.flat(2));
 
@@ -718,3 +718,7 @@ console.log(printDeposit);
 // some
 const someTest = desposit.some(deposi => deposi > 1000);
 console.log(someTest);
+
+// every
+const everyTest = desposit.every(depos => depos > 0);
+console.log(everyTest);

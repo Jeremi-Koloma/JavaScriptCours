@@ -714,3 +714,7 @@ console.log(getIndexDesposit4);
 // forEach
 const printDeposit = desposit.forEach((currDep, i, arr) => console.log(`${i} : ${currDep}`));
 console.log(printDeposit);
+
+// some
+const someTest = desposit.some(deposi => deposi > 1000);
+console.log(someTest);

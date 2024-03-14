@@ -706,3 +706,7 @@ console.log(bestDesposit);
 //find
 const getLowerDepsosit = desposit.find(depos => depos < 25);
 console.log(getLowerDepsosit);
+
+// forEach
+const printDeposit = desposit.forEach((currDep, i, arr) => console.log(`${i} : ${currDep}`));
+console.log(printDeposit);

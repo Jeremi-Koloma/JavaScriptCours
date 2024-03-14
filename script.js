@@ -698,3 +698,7 @@ console.log(balanceDeposit);
 const euro = 655.38;
 const depositToEuro = desposit.map(currDepos => (currDepos / euro).toFixed(2));
 console.log(depositToEuro);
+
+// filter
+const bestDesposit = desposit.filter((depos) => depos > 500);
+console.log(bestDesposit);

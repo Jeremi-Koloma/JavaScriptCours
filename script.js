@@ -707,6 +707,10 @@ console.log(bestDesposit);
 const getLowerDepsosit = desposit.find(depos => depos < 25);
 console.log(getLowerDepsosit);
 
+// findIndex
+const getIndexDesposit4 = desposit.findIndex(depos => depos === 25000);
+console.log(getIndexDesposit4);
+
 // forEach
 const printDeposit = desposit.forEach((currDep, i, arr) => console.log(`${i} : ${currDep}`));
 console.log(printDeposit);

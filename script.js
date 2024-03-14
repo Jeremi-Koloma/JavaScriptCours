@@ -448,7 +448,7 @@ console.log(teamUnique);
 // Get a Set array
 const teamUniqueArray = [...new Set(team)];
 console.log(teamUniqueArray);
-
+(you) => console.log(`Jesus loves ${you}`);
 
 /* ********************************* MAP ****** **********
  *********************************************************** */
@@ -686,3 +686,15 @@ console.log(arrFlat.flat());
 const arrFlatDeep = [[[1,2],3], [0,[8,2]], [9,3]];
 console.log(arrFlatDeep);
 console.log(arrFlatDeep.flat(2));
+
+// REVISION
+const desposit = [1000, 30500, 5000, 400, 25000, 700, 100, 75, 10, 25, 500];
+console.log(desposit);
+// reduce
+const balanceDeposit = desposit.reduce((accumulator, currDeposit) => accumulator + currDeposit, 0);
+console.log(balanceDeposit);
+
+// map
+const euro = 655.38;
+const depositToEuro = desposit.map(currDepos => (currDepos / euro).toFixed(2));
+console.log(depositToEuro);

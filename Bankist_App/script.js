@@ -138,8 +138,8 @@ const displaySummary = function (movement) {
   }, 0);
 
   // Display the InSummary in the UI
-  labelSumIn.textContent = `${incomes} $`;
-  labelSumOut.textContent = `${Math.abs(outSum)} $`;
+  labelSumIn.textContent = `${incomes.toFixed(2)} $`;
+  labelSumOut.textContent = `${Math.abs(outSum).toFixed(2)} $`;
   labelSumInterest.textContent = `${interrestMov}`;
 };
 
@@ -158,6 +158,16 @@ const updateUi = function (account) {
 
 // EVENT HANDLER
 let currentAccount;
+
+const now = new Date();
+const day = `${now.getDate()}`.padStart(2, 0);
+const month = `${now.getMonth() + 1}`.padStart(2, 0);
+const year = now.getFullYear();
+const hours = now.getHours();
+const minutes = now.getMinutes();
+
+labelDate.textContent = `${day}/${month}/${year} ${hours}:${minutes}`;
+
 btnLogin.addEventListener('click', function (e) {
   // Prevent the form (KEEPING the FORM)
   e.preventDefault();
@@ -228,7 +238,7 @@ btnClose.addEventListener('click', function (e) {
 
 // SORT BTN
 let sorted = false;
-btnSort.addEventListener('click', function(e){
+btnSort.addEventListener('click', function (e) {
   e.preventDefault();
   displayMovements(currentAccount.movements, !sorted);
   sorted = !sorted;

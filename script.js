@@ -722,3 +722,9 @@ console.log(someTest);
 // every
 const everyTest = desposit.every(depos => depos > 0);
 console.log(everyTest);
+
+// DAYS PASSED
+const calcDaysPassed = (date1, date2) => (date2 - date1) / (1000 * 60 * 60 * 24);
+ //                                                         ms     s    m    h
+const numberOfDaysPassed = calcDaysPassed(new Date(2024, 2, 10), new Date(2024, 2, 15));
+console.log(`${numberOfDaysPassed} Ago`);

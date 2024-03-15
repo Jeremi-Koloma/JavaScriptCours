@@ -160,13 +160,19 @@ const updateUi = function (account) {
 let currentAccount;
 
 const now = new Date();
-const day = `${now.getDate()}`.padStart(2, 0);
-const month = `${now.getMonth() + 1}`.padStart(2, 0);
-const year = now.getFullYear();
-const hours = now.getHours();
-const minutes = now.getMinutes();
 
-labelDate.textContent = `${day}/${month}/${year} ${hours}:${minutes}`;
+const options = {
+  hour: 'numeric',
+  minute: 'numeric',
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  weekday: 'long'
+}; 
+
+const locale = navigator.language;
+
+labelDate.textContent = new Intl.DateTimeFormat(locale, options).format(now);
 
 btnLogin.addEventListener('click', function (e) {
   // Prevent the form (KEEPING the FORM)

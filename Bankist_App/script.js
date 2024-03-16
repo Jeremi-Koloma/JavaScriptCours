@@ -79,17 +79,23 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
+const locale = navigator.language;
+
 const displayMovements = function (movmts, sort = false) {
   // set all the context of containerMovements to empty
   containerMovements.innerHTML = '';
   // Sorting
   const movs = sort ? movmts.slice().sort((a, b) => a - b) : movmts;
   movs.forEach(function (mov, index) {
+    // formating movements
+
+    const formatedMov = new Intl.NumberFormat(locale).format(mov);
+
     const typeMovement = mov > 0 ? 'deposit' : 'withdrawal';
     const htmlMovementRow = `
     <div class="movements__row">
       <div class="movements__type movements__type--${typeMovement}">${index + 1} ${typeMovement}</div>
-      <div class="movements__value">${mov} CFA</div>
+      <div class="movements__value">${formatedMov} CFA</div>
    </div>
     `;
     // Displaying movements in the html file
@@ -103,7 +109,9 @@ const displayBalanceMovement = function (account) {
     return acc + currMov;
   }, 0);
   // Display the balance in the UI
-  labelBalance.textContent = `${account.balance} CFA`;
+  const balanceFormated = new Intl.NumberFormat(locale).format(account.balance);
+  labelBalance.textContent = `${balanceFormated} CFA`;
+  labelBalance.style.fontWeight = 'bold';
 };
 
 // DISPLAY SUMMARY
@@ -161,18 +169,16 @@ let currentAccount;
 
 const now = new Date();
 
-const options = {
+const dateOptions = {
   hour: 'numeric',
   minute: 'numeric',
   day: 'numeric',
   month: 'long',
   year: 'numeric',
   weekday: 'long'
-}; 
+};
 
-const locale = navigator.language;
-
-labelDate.textContent = new Intl.DateTimeFormat(locale, options).format(now);
+labelDate.textContent = new Intl.DateTimeFormat(locale, dateOptions).format(now);
 
 btnLogin.addEventListener('click', function (e) {
   // Prevent the form (KEEPING the FORM)

@@ -725,6 +725,32 @@ console.log(everyTest);
 
 // DAYS PASSED
 const calcDaysPassed = (date1, date2) => (date2 - date1) / (1000 * 60 * 60 * 24);
- //                                                         ms     s    m    h
+//                                                         ms     s    m    h
 const numberOfDaysPassed = calcDaysPassed(new Date(2024, 2, 10), new Date(2024, 2, 15));
 console.log(`${numberOfDaysPassed} Ago`);
+
+
+/* ********************************* SETTIMEOUT ****** **********
+ *********************************************************** */
+setTimeout(() => console.log('--- SetTimeOut string ---'), 3000);
+
+// setTimeout with paramettres
+setTimeout((food1, food2) => console.log(`--- SetTimeOut food with ${food1} and ${food2} ---`), 4000, 'rice', 'tomate');
+
+
+/* ********************************* SETINTERVAL ****** **********
+ *********************************************************** */
+setInterval( function(){
+      const now = new Date()
+      const formatedDate = navigator.language;
+      const dateOptions = {
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            //day: 'numeric',
+            //month: 'long',
+            //year: 'numeric',
+            //weekday: 'long'
+          };
+      console.log(new Intl.DateTimeFormat(formatedDate, dateOptions).format(now));     
+}, 1000);

@@ -74,6 +74,7 @@ const inputTransferAmount = document.querySelector('.form__input--amount');
 const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
+const timer = document.querySelector('.timer');
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -201,6 +202,24 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginPin.blur();
     // UPDATE THE UI
     updateUi(currentAccount);
+    // timer
+    setInterval(function () {
+      const now = new Date()
+      const formatedDate = navigator.language;
+      const dateOptions = {
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        //day: 'numeric',
+        //month: 'long',
+        //year: 'numeric',
+        //weekday: 'long'
+      };
+
+      const fmtDate = new Intl.DateTimeFormat(formatedDate, dateOptions).format(now);
+      timer.textContent = fmtDate;
+    }, 1000);
+
   }
 
 }, false);

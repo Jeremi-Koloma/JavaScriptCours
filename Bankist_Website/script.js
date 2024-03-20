@@ -8,6 +8,9 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
@@ -30,11 +33,9 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-
-
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
-
+//////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+//// BTN SCROLL
 btnScrollTo.addEventListener('click', function (e) {
   // the section-1 position
   //const sect1Coords = section1.getBoundingClientRect();
@@ -59,6 +60,20 @@ btnScrollTo.addEventListener('click', function (e) {
 
   // SCROLLING - MODERNE WAY
   section1.scrollIntoView({ behavior: 'smooth' });
+
+});
+
+
+//////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+//// NAV LINKS
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
 
 
 });

@@ -90,12 +90,17 @@ const tabsContent = document.querySelectorAll('.operations__content');
 
 tabsContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.operations__tab');
-  console.log(clicked);
-  // 
+
+  // guard clause
   if (!clicked) return;
 
   // remove the active to others btn
   tabs.forEach((tab) => tab.classList.remove('operations__tab--active'));
   // Add btn active
   clicked.classList.add('operations__tab--active');
+
+  // remove all Active class content
+  tabsContent.forEach((contnt) => contnt.classList.remove('operations__content--active'));
+  // displaying btn content
+  document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active');
 });

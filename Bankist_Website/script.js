@@ -77,3 +77,25 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 
 
 });
+
+
+
+//////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+//// TABS
+
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContent = document.querySelectorAll('.operations__content');
+
+tabsContainer.addEventListener('click', function (e) {
+  const clicked = e.target.closest('.operations__tab');
+  console.log(clicked);
+  // 
+  if (!clicked) return;
+
+  // remove the active to others btn
+  tabs.forEach((tab) => tab.classList.remove('operations__tab--active'));
+  // Add btn active
+  clicked.classList.add('operations__tab--active');
+});
